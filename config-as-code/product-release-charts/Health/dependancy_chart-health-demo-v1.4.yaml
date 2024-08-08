@@ -40,6 +40,8 @@ modules:
       - egovio/playground:1.0
       - egovio/mdms-v2-db:MDMS-v2-2.9LTS-fc6b868dce-47
       - egovio/boundary-service-db:boundary-hierarchy-def-modified-2.9-lts-629baf086b-15
+      - egovio/project-factory:v0.1.0-6caaf2700e-6
+      - egovio/workbench-ui:v0.1.0-6caaf2700e-16
   - name: business
     dependencies:
       - "core"
