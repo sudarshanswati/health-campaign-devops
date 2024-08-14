@@ -25,7 +25,7 @@ modules:
       - egovio/egov-enc-service:v1.1.2-72f8a8f87b-9
       - egovio/egov-localization:v1.1.3-72f8a8f87b-6
       - egovio/egov-idgen:v1.2.3-72f8a8f87b-7
-     ## - egovio/egov-filestore:v1.2.4-72f8a8f87b-10 not used in health for now
+      - egovio/egov-filestore:v1.2.4-72f8a8f87b-10
       - egovio/egov-indexer:indexer-17-searchBody-1799f17903-57
       - egovio/egov-notification-mail:health-digit-master-6865af2823-2
       - egovio/egov-notification-sms:v1.1.3-48a03ad7bb-10
@@ -40,6 +40,8 @@ modules:
       - egovio/playground:1.0
       - egovio/mdms-v2-db:MDMS-v2-2.9LTS-fc6b868dce-47
       - egovio/boundary-service-db:boundary-hierarchy-def-modified-2.9-lts-629baf086b-15
+      - egovio/project-factory:v0.1.0-6caaf2700e-6
+      - egovio/workbench-ui:v0.1.0-6caaf2700e-16
   - name: business
     dependencies:
       - "core"
@@ -102,5 +104,5 @@ modules:
       - "frontend"
       - "health"
     services:
-      - egovio/project-factory:v0.1.0-6caaf2700e-6
-      - egovio/workbench-ui:v0.1.0-6caaf2700e-16
+      - egovio/project-factory:factory-0.1-installer-fix-d24c9ec0cd-8
+      - egovio/workbench-ui:health-change-5366d1113a-534

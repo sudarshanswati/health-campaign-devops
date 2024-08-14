@@ -111,6 +111,8 @@ env: |
     value: {{ index .Values "heap" | quote }}
   - name: ALLOWED_FORMATS_MAP
     value: {{ index .Values "allowed-file-formats-map" | quote }}
+  - name: ALLOWED_FORMATS
+    value: {{ index .Values "allowed-file-formats" | quote }} 
   {{- if index .Values "filestore-url-validity" }}   
   - name: PRESIGNED_URL_EXPIRY_TIME_IN_SECS     
     value: {{ index .Values "filestore-url-validity" | quote }}   
