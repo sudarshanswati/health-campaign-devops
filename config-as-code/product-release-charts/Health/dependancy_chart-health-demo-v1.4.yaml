@@ -40,8 +40,6 @@ modules:
       - egovio/playground:1.0
       - egovio/mdms-v2-db:MDMS-v2-2.9LTS-fc6b868dce-47
       - egovio/boundary-service-db:boundary-hierarchy-def-modified-2.9-lts-629baf086b-15
-      - egovio/project-factory:v0.1.0-6caaf2700e-6
-      - egovio/workbench-ui:v0.1.0-6caaf2700e-16
   - name: business
     dependencies:
       - "core"
@@ -82,6 +80,7 @@ modules:
       - "dss"
       - "Other"
       - "frontend"
+      - "m_hcmconsole"
     services:
       - egovio/facility-db:v1.1.2-00a7accbda-14
       - egovio/product-db:v1.1.0-00a7accbda-31
@@ -98,11 +97,6 @@ modules:
       - "backbone"
       - "authn-authz"
       - "core"
-      - "business"
-      - "dss"
-      - "Other"
-      - "frontend"
-      - "health"
     services:
       - egovio/project-factory:factory-0.1-installer-fix-d24c9ec0cd-8
       - egovio/workbench-ui:health-change-5366d1113a-534
