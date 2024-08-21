@@ -87,8 +87,7 @@ module "eks" {
   }"
 }
 
-resource "aws_iam_role" "eks_iam" {
-  name = "${var.cluster_name}-eks"
+
 
   
 
