@@ -159,18 +159,18 @@ resource "aws_security_group_rule" "rds_db_ingress_workers" {
 resource "aws_eks_addon" "kube_proxy" {
   cluster_name      = data.aws_eks_cluster.cluster.name
   addon_name        = "kube-proxy"
-  resolve_conflicts = "OVERWRITE"
+  resolve_conflicts_on_update = "OVERWRITE"
 }
 resource "aws_eks_addon" "core_dns" {
   cluster_name      = data.aws_eks_cluster.cluster.name
   addon_name        = "coredns"
-  resolve_conflicts = "OVERWRITE"
+  resolve_conflicts_on_update = "OVERWRITE"
 }
 resource "aws_eks_addon" "aws_ebs_csi_driver" {
   cluster_name      = data.aws_eks_cluster.cluster.name
   addon_name        = "aws-ebs-csi-driver"
   addon_version     = "v1.32.0-eksbuild.1"
-  resolve_conflicts = "OVERWRITE"
+  resolve_conflicts_on_update = "OVERWRITE"
 }
 
 module "es-master" {
