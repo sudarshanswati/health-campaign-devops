@@ -50,7 +50,7 @@ data "tls_certificate" "thumb" {
 }
 
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  config_path = "./kubeconfig_digithealth"
 }
 
 module "eks" {
