@@ -87,11 +87,48 @@ module "eks" {
   }"
 }
 
+resource "aws_iam_role" "eks_iam" {
+  name = "${var.cluster_name}-eks"
 
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Sid = "EKSWorkerAssumeRole"
+        Effect = "Allow",
+        Principal = {
+          Federated = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:oidc-provider/${replace(data.aws_eks_cluster.cluster.identity[0].oidc[0].issuer, "https://", "")}"
+        },
+        Action = "sts:AssumeRoleWithWebIdentity",
+        Condition = {
+          StringEquals = {
+            "${replace(data.aws_eks_cluster.cluster.identity[0].oidc[0].issuer, "https://", "")}:sub" = "system:serviceaccount:kube-system:ebs-csi-controller-sa"
+          }
+        }
+      }
+    ]
+  })
+}
 
-  
+resource "kubernetes_service_account" "ebs_csi_controller_sa" {
+  metadata {
+    name      = "ebs-csi-controller-sa"
+    namespace = "kube-system"
+  }
+} 
 
-
+resource "kubernetes_annotations" "example" {
+  depends_on = [kubernetes_service_account.ebs_csi_controller_sa] 
+  api_version = "v1"
+  kind        = "ServiceAccount"
+  metadata {
+    name = "ebs-csi-controller-sa"
+    namespace = "kube-system"
+  }
+  annotations = {
+    "eks.amazonaws.com/role-arn" = "${aws_iam_role.eks_iam.arn}"
+  }
+}
 
 resource "aws_iam_role_policy_attachment" "cluster_AmazonEBSCSIDriverPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
