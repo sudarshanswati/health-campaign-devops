@@ -18,7 +18,7 @@ db_name: "testhealthdb"
 db_username: "testhealth" 
 
 # Replace with Domain name you want for your web applications
-domain_name: "eydemoapp.in"
+domain_name: "health-demo.eydemoapp.in"
 
 # Replace with the name you want to give to your S3 bucket which is used to store the terraform states
 terraform_state_bucket_name: "digithealth-buckets"
