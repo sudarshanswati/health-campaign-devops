@@ -34,7 +34,7 @@ modules:
       ## - egovio/egov-url-shortening:v1.1.2-1715164454-3 not used in health now
       - egovio/egov-user:health-digit-master-e27b970-31
       - egovio/user-otp:health-digit-master-6865af2823-3
-      - egovio/egov-workflow-v2:v1.2.1-df98ec3c35-2
+      - egovio/egov-workflow-v2-db:2.9.1-80b58dc788-15
       - egovio/audit-service:audit-heatlh-40b1a4018a-11
       - egovio/error-handler:master-impel-dump-5022b7acff-1
       - egovio/playground:1.0
