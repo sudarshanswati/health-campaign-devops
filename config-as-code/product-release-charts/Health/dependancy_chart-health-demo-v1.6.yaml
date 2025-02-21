@@ -26,7 +26,7 @@ modules:
       - egovio/egov-localization-db:DIGIT-2.9-LTS-237578ce80-10
       - egovio/egov-idgen-db:DIGIT-2.9-LTS-07f47790b8-8
       - egovio/egov-filestore-db:DIGIT-2.9-LTS-237578ce80-14
-      - egovio/egov-indexer-db:DIGIT-2.9.1-c781a2f714-65
+      - egovio/egov-indexer-db:2.9.1-c781a2f714-65
       - egovio/egov-notification-mail:DIGIT-2.9-LTS-07f47790b8-5
       - egovio/egov-notification-sms:DIGIT-2.9-LTS-07f47790b8-7
       - egovio/egov-otp-db:DIGIT-2.9-LTS-07f47790b8-6
@@ -34,7 +34,7 @@ modules:
       ## - egovio/egov-url-shortening:v1.1.2-1715164454-3 not used in health now
       - egovio/egov-user-db:DIGIT-2.9-LTS-c33cfe45ab-19
       - egovio/user-otp:DIGIT-2.9-LTS-07f47790b8-9
-      - egovio/egov-workflow-v2-db:DIGIT-2.9.1-80b58dc788-15
+      - egovio/egov-workflow-v2-db:2.9.1-80b58dc788-15
       - egovio/audit-service-db:DIGIT-2.9-LTS-07f47790b8-12
       - egovio/error-handler:master-impel-dump-5022b7acff-1
       - egovio/playground:2.0
